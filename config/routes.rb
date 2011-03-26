@@ -1,5 +1,11 @@
 Ecommerce::Application.routes.draw do
 
+  get 'store/home'
+  get 'store/contact'
+  get 'store/about'
+  
+  get 'users/new'
+  
   match '/contact', :to => 'store#contact'
   match '/about',   :to => 'store#about'
   
