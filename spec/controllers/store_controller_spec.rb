@@ -3,6 +3,10 @@ require 'spec_helper'
 describe StoreController do
   render_views
   
+  before(:each) do
+    @base_title = "mOytoyz | "
+  end
+  
   describe "GET 'home'" do
     it "should be successful" do
       get 'home'
@@ -12,7 +16,7 @@ describe StoreController do
     it "should have the right title" do
       get 'home'
       response.should have_selector("title",
-                                    :content => "Home")
+                                    :content => @base_title + "Home")
     end
   end
 
@@ -25,7 +29,7 @@ describe StoreController do
     it "should have the right title" do
       get 'about'
       response.should have_selector("title",
-                                    :content => "About")
+                                    :content => @base_title + "About")
     end
   end
 
@@ -38,7 +42,7 @@ describe StoreController do
     it "should have the right title" do
       get 'contact'
       response.should have_selector("title",
-                                    :content => "Contact")
+                                    :content => @base_title + "Contact")
     end
   end
 

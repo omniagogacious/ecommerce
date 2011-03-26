@@ -1,10 +1,9 @@
 Ecommerce::Application.routes.draw do
-  get "store/home"
 
-  get "store/about"
-
-  get "store/contact"
-
+  match '/contact', :to => 'store#contact'
+  match '/about',   :to => 'store#about'
+  
+  match '/signup',  :to => 'users#new'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -54,7 +53,7 @@ Ecommerce::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "store#home"
 
   # See how all your routes lay out with "rake routes"
 
