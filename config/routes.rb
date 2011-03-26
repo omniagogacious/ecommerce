@@ -1,4 +1,10 @@
 Ecommerce::Application.routes.draw do
+  get "store/home"
+
+  get "store/about"
+
+  get "store/contact"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
